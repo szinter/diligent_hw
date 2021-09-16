@@ -5,6 +5,10 @@ import { SurveyDetailsComponent } from './survey-details/survey-details.componen
 import {
   MatInputModule
 } from '@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -14,8 +18,11 @@ import {
   ],
   imports: [
     CommonModule,
-    MatInputModule
-
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
   ]
 })
 export class SurveyModule { }

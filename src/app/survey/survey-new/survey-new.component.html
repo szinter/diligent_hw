@@ -1,10 +1,35 @@
+<button mat-flat-button color="primary" (click)="abandonSurvey()">Abandon</button>
 
-<form action="">
+<form [formGroup]="survey" action="">
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field  class="input-long" appearance="fill">
         <mat-label>Add Title</mat-label>
-        <textarea matInput (change)="updateTitle($event)"  name="" id="" cols="30" rows="10"></textarea>
+        <input matInput formControlName="title" name="" >
     </mat-form-field>
+
+    <div formArrayName="questions">
+        <h2>Questions</h2>
+        <button mat-flat-button color="primary" (click)="addNewQuestion()">Add new question</button>
+
+        <div *ngFor="let question of questions.controls; let i=index">
+            <div [formGroupName]="i">
+                <h1>Question {{i + 1}}</h1>
+                <mat-form-field  class="input-long" appearance="fill">
+                    <mat-label>add query</mat-label>
+                    <input matInput formControlName="query" name="" >
+                </mat-form-field>
+                <div formArrayName="answers">
+                    <button mat-flat-button color="primary" (click)="addNewAnswer(i)" [disabled]="getAnswerControls(i).length === 4">Add new answer</button>
+                    <div *ngFor="let answer of getAnswerControls(i); let j=index">
+                        <mat-form-field appearance="fill">
+                            <mat-label>add answer</mat-label>
+                            <input matInput [formControlName]="j" name="" >
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
 
-<div>SAVE</div>
+<button mat-flat-button color="accent" (click)="saveSurvey()">Save</button>

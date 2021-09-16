@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LandingModule } from './landing/landing.module';
 import { SurveyModule } from './survey/survey.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     SurveyModule,
     LandingModule,
     NoopAnimationsModule,
-
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-<div (click)="goToLanding()">BACK</div>
+<button mat-flat-button color="accent" (click)="goToLanding()">BACK</button>
+
 <div class="survey-details" *ngIf="survey$ | async as survey">
     <h1>
         {{survey.title}}
@@ -6,15 +7,12 @@
 
     <div class="questions">
         <div *ngFor="let question of survey.questions">
-            <div>
+            <h2>
                 {{question.query}}
-                {{question.answerType}}
-            </div>
-            <div class="answers">
-                <div *ngFor="let answer of question.answers">
-                    {{answer}}
-                </div>
-            </div>
+            </h2>
+            <mat-list role="list">
+                <mat-list-item role="listitem" *ngFor="let answer of question.answers">{{answer}}</mat-list-item>
+              </mat-list>
         </div>
     </div>
 </div>

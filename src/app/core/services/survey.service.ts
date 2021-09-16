@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Survey } from '../models/survey.model';
 import SurveysMock from '../mocks/surveys1.mock.json';
 
@@ -8,14 +8,13 @@ import SurveysMock from '../mocks/surveys1.mock.json';
 })
 export class SurveyService {
 
-  surveys: Survey[] = SurveysMock;
+  private surveys: Survey[] = SurveysMock;
+  private surveysMessenger: BehaviorSubject<Survey[]> = new BehaviorSubject(this.surveys);
 
   constructor() { }
 
   getAllSurveys(): Observable<Survey[]> {
-    return of(
-      this.surveys
-    )
+    return this.surveysMessenger.asObservable();
   }
 
   getSurveyById(id: string): Observable<Survey> {
@@ -26,5 +25,11 @@ export class SurveyService {
     return of(
       survey
     )
+  }
+
+  saveSurvey(survey: Survey) {
+    survey.id = Math.floor(Math.random() * 100) + '';
+    this.surveys.push(survey);
+    this.surveysMessenger.next(this.surveys);
   }
 }
