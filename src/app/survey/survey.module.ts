@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SurveyNewComponent } from './survey-new/survey-new.component';
 import { SurveyDetailsComponent } from './survey-details/survey-details.component';
+import {
+  MatInputModule
+} from '@angular/material/input'
 
 
 @NgModule({
@@ -10,7 +13,9 @@ import { SurveyDetailsComponent } from './survey-details/survey-details.componen
     SurveyDetailsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatInputModule
+
   ]
 })
 export class SurveyModule { }

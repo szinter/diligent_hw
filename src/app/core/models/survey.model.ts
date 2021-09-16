@@ -1,11 +1,11 @@
 export interface Survey {
-    id: string;
+    id?: string;
     title: String;
     questions: Question[]
 }
 
 export interface Question {
-    id: string;
+    id?: string;
     query: string;
     answers: String[];
     answerType: AnswerType
