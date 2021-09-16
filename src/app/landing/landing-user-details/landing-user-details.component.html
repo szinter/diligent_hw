@@ -1,0 +1,16 @@
+<div class="user-details">
+    <div *ngIf="userDetails$ | async as user">
+        <div>
+            <div>Name</div>
+            <div>{{user.name}}</div>
+        </div>
+        <div>
+            <div>Role</div>
+            <div>{{user.role}}</div>
+        </div>
+        <div>
+            <div>ID</div>
+            <div>{{user.id}}</div>
+        </div>
+    </div>
+</div>

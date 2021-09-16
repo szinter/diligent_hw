@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SurveyLandingComponent } from './survey-landing.component';
+import { LandingSurveyListComponent } from './landing-survey-list.component';
 
-describe('SurveyLandingComponent', () => {
-  let component: SurveyLandingComponent;
-  let fixture: ComponentFixture<SurveyLandingComponent>;
+describe('LandingSurveyListComponent', () => {
+  let component: LandingSurveyListComponent;
+  let fixture: ComponentFixture<LandingSurveyListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SurveyLandingComponent ]
+      declarations: [ LandingSurveyListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SurveyLandingComponent);
+    fixture = TestBed.createComponent(LandingSurveyListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
