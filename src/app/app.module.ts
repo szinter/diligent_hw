@@ -16,7 +16,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     SurveyModule,
     LandingModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
