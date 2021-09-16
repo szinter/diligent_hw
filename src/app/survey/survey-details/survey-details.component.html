@@ -1,1 +1,20 @@
-<p>survey-details works!</p>
+<div (click)="goToLanding()">BACK</div>
+<div class="survey-details" *ngIf="survey$ | async as survey">
+    <h1>
+        {{survey.title}}
+    </h1>
+
+    <div class="questions">
+        <div *ngFor="let question of survey.questions">
+            <div>
+                {{question.query}}
+                {{question.answerType}}
+            </div>
+            <div class="answers">
+                <div *ngFor="let answer of question.answers">
+                    {{answer}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
