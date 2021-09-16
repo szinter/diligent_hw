@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SurveyService } from 'src/app/core/services/survey.service';
 
 @Component({
   selector: 'app-survey-details',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private surveyService: SurveyService) { }
 
   ngOnInit(): void {
   }

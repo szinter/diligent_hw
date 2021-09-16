@@ -1,1 +1,10 @@
-<p>landing-survey-list works!</p>
+<div class="survey-list">
+    <div *ngFor="let survey of surveys$ | async">
+        <div class="survey">
+            <h3 class="survey-title">
+                {{survey.title}}
+            </h3>
+            <hr>
+        </div>
+    </div>
+</div>
